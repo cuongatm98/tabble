@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính độ C</title>
+</head>
+<body>
+<!--<input type="number" id="C" oninput="chuyendoi()">-->
+<p id="kq"></p>
+<script>
+    let c = prompt("nhap do C")
+    function chuyendoi(){
+        document.getElementById("kq").innerText=(9/5)*c+32 +"";
+    }
+    chuyendoi();
+</script>
+
+</body>
+</html>
