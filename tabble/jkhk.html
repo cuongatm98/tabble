@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h2>What Can JavaScript Do?</h2>
-<p>JavaScript can change HTML attributes.</p>
-<p>In this case JavaScript changes the src (source) attribute of an image.</p>
-<button onclick="document.getElementById('myImage').src='https://www.w3schools.com/js/pic_bulbon.gif'">Turn on the
-    light
-</button>
-<img id="myImage" src="https://www.w3schools.com/js/pic_bulboff.gif" style="width:100px">
-<button onclick="document.getElementById('myImage').src='https://www.w3schools.com/js/pic_bulboff.gif'">Turn off the
-    light
-</button>
+    <script>
+        let year = parseInt(prompt("Enter a year"));
+        let isLeapYear = false;
 
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0) {
+                    isLeapYear = true;
+                }
+            } else {
+                isLeapYear = true;
+            }
+        }
+
+        if (isLeapYear) {
+            alert(year + " is a leap year");
+        } else {
+            alert(year + " is NOT a leap year");
+        }
+    </script>
 </body>
 </html>
