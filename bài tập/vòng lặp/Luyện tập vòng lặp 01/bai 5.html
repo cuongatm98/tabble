@@ -6,10 +6,16 @@
 </head>
 <body>
 <script>
- var n=3;
- while (n>200);{
-     document.write(n=(n-1)+(n-2))
- }
+  let a=1,b=0,temp;
+  let sum = 0;
+  for (let i=0;i<=20;i++){
+    temp=a;
+    a=a+b;
+    b=temp;
+    sum=sum+b
+  }
+  console.log(sum)
+
 </script>
 </body>
 </html>
