@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>bai8</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1000" height="500" style="border: 1px solid #000000 "></canvas>
+<script>
+  let canvas = document.getElementById("myCanvas");
+  let pen = canvas.getContext('2d');
+  class Circle {
+    constructor(x, y, radius, color) {
+      this.x = x;
+      this.y = y;
+      this.radius = radius;
+      this.color = color;
+      this.speed = 5;
+    }
+    draw(pen) {
+      pen.beginPath();
+      pen.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+      pen.fillStyle = this.color;
+      pen.fill();
+      pen.closePath();
+    }
+    moveLeft() {
+      if((this.x-this.radius)>0) {
+        this.x -= this.speed;
+      }
+    }
+    moveRight() {
+      if((this.x+this.radius)<canvas.width) {
+        this.x += this.speed;
+      }
+    }
+    moveTop(){
+      if((this.y-this.radius)>0) {
+        this.y -= this.speed;
+      }
+    }
+    moveDown(){
+      if((this.y+this.radius)<canvas.height) {
+        this.y += this.speed;
+      }
+    }
+  }
+  let circle = new Circle(100, 100, 100);
+  function main() {
+    pen.clearRect(0, 0, canvas.width, canvas.height);
+    circle.draw(pen);
+  }
+  function move(evt) {
+    switch (evt.keyCode) {
+      case 37:
+        circle.moveLeft();
+        break;
+      case 39:
+        circle.moveRight();
+        break;
+      case 38:
+        circle.moveTop();
+        break;
+      case 40:
+        circle.moveDown();
+        break;
+    }
+  }
+  window.addEventListener('keydown', move);
+  setInterval(main,50);
+  createCircle()
+</script>
+</body>
+</html>
