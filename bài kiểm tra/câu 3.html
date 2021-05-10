@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  function isFibonacci(number){
+          let a=1;
+          let b=0;
+          let temp=0;
+    while (true){
+      if (number == b) {
+          alert('số ' + number + ' thuộc dãy fibonaci');
+          return true;
+      }else if(b > number){
+          alert('số ' + number + ' không thuộc dãy fibonaci');
+          return false;
+      }
+          temp=a;
+          a=a+b;
+          b=temp;
+    }
+  }
+  document.write(isFibonacci(5))
+
+</script>
+</body>
+</html>
